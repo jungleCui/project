@@ -1,6 +1,6 @@
 //引入config
 require(['config','nav','menu'],function(){
-	require(['jquery'],function(){
+	require(['jquery','lazy'],function(){
 		var $ul = $('#main .carousel ul');
 		var index = 0;
 		setInterval(function(){

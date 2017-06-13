@@ -7,11 +7,13 @@ require.config({
     	// 这里的路径也是基于baseURl
 		  "jquery": "../lib/jquery-3.2.1",
       "gdszoom":"../lib/jquery-gdszoom/jquery.gdszoom",
-      "common":"../lib/common"
+      "common":"../lib/common",
+      "lazy":"../lib/jquery.lazyload"
 		
     },
 
     shim:{
-    'gdszoom':['jquery']
+    'gdszoom':['jquery'],
+    'lazy':['jquery']
   }
 });

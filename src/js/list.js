@@ -1,7 +1,7 @@
 
 //引入config
 require(['config','nav','menu'],function(){
-	require(['jquery'],function($){
+	require(['jquery','lazy'],function($){
 		nav();
 		menu();
 		var category = location.search.split('=')[1];
@@ -18,13 +18,18 @@ require(['config','nav','menu'],function(){
 					console.log(res);
 					var $html = res.map(function(item){
 						return `<li id="${item.id}">
-									<img src="../img/${item.img}" alt="" />
+									<img class="lazy" data-original="http://localhost/project/src/img/${item.img}" src="../img/${item.img}" alt="" />
 									<p class="title">${item.title}</p>
 									<p>${item.category}</p>
 									<p>${item.price}</p>
 								</li>`
-					});
+					}).join('');
 					$list.html($html);
+
+					//懒加载
+					$("img.lazy").lazyload({
+						effect: "fadeIn"
+					});
 				}
 			})
 	
@@ -32,8 +37,6 @@ require(['config','nav','menu'],function(){
 
 		$list.on('click','li',function(){
 			$(location).attr('href', '../html/detail.html?id='+this.id);
-			
-
 		})
 
 
