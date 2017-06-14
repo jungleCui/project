@@ -1,5 +1,12 @@
 require(['config','index','jiarugouwuche'],function(){
 	require(['common','jquery'],function(){
+		//在cookie获取用户名写入页面
+		var $login = $('#head .user_menu li .yidenglu');
+		var $account = getCookie('account');
+		if($account){
+			$login.html($account)
+		};
+		
 		$all_car = $('#main .all_car');
 		var carlist = getCookie('carlist');
 			carlist = carlist?JSON.parse(carlist):[];
@@ -35,9 +42,9 @@ require(['config','index','jiarugouwuche'],function(){
 					</div>
 					<div class="car_good_qty">
 						<p>
-							<a>-</a>
-								<input type="text" value="${res.qty}">
-							<a>+</a>
+							<button class="jia">+</button>
+							<input type="text" value="${res.qty}">
+							<button class="jian">-</button>
 						</p>
 					</div>
 					<div class="car_good_sum">
@@ -53,6 +60,8 @@ require(['config','index','jiarugouwuche'],function(){
 			var $youhui = $('#main .jiezhang .youhui');
 			var $del = $('#main .all_car .a3');
 			var $all = $('#main .jiezhang #all');
+
+			//全选
 			$all.on('click',function(){
 				if($all.is(':checked')){
 					$('#main .jiezhang .tal').html(tal);
@@ -74,10 +83,15 @@ require(['config','index','jiarugouwuche'],function(){
 				var $checktal = 0 ;
 				var $checked = $all_car.find("input:checked");
 				for(var i=0 ; i<$checked.length ; i++){
-					$checktal += $checked[i].parentNode.children[5].children[0].children[0].innerHTML.slice(1)*1;
+					$checktal += $checked[i].parentNode.children[4].children[0].children[1].value*
+								$checked[i].parentNode.children[2].children[0].children[0].innerHTML.slice(1);
 					$('#main .jiezhang .tal').html($checktal);
 					$shangpinjia.html($checktal);
 					$youhui.html('0');
+				}
+				if($checked.length==0){
+					$shangpinjia.html($checktal);
+					$('#main .jiezhang .tal').html(0);
 				}
 			})
 			
@@ -85,9 +99,7 @@ require(['config','index','jiarugouwuche'],function(){
 
 			//点击删除商品
 			$del.on('click',function(){
-				$(this).parent().parent().parent().parent().remove();
-
-					
+				$(this).parent().parent().parent().parent().remove();					
 				var $talnum = 0;
 				var newarr = [];
 				for(var i=0 ; i<carlist.length ; i++){	
@@ -101,18 +113,36 @@ require(['config','index','jiarugouwuche'],function(){
 				var now = new Date();
 				now.setDate(now.getDate() + 7);
 				setCookie('carlist',JSON.stringify(carlist),now,'/');
-				$('#main .jiezhang .tal').html(tal);				
+				$('#main .jiezhang .tal').html(tal);
+				$shangpinjia.html(tal);
+
+				if($(this).parent().parent().prev().is(':checked')==true){
+					$shangpinjia.html(tal);
+				}			
 				
 			})
 
 			//点击清空购物车
 			var $clearbtn = $('#main .jiezhang .clearbtn');
 			$clearbtn.on('click',function(){
-				// var now1 = new Date();
-				// now1.setDate(now1.getDate() - 10);
-				// setCookie('carlist',now1);
+				var now = new Date();
+				now.setDate(now.getDate() + 7);
+				setCookie('carlist',[],now,'/');
 				$all_car.html('');
 				$('#main .jiezhang .tal').html(0);
+			})
+
+			//购物车加减
+			var $jia = $('#main .all_car .car_good_qty .jia');
+			var $jian = $('#main .all_car .car_good_qty .jian');
+			$jia.on('click',function(){
+				var $inputqty = this.nextElementSibling.value++;
+				//改页面的数字
+				
+				// $shangpinjia.html(tal);
+			})
+			$jian.on('click',function(){
+				var $inputqty = this.previousElementSibling.value--;
 			})
 		
 	})

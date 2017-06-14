@@ -1,9 +1,16 @@
 
 //引入config
 require(['config','nav','menu'],function(){
-	require(['jquery','lazy'],function($){
+	require(['jquery','lazy','common'],function($){
 		nav();
 		menu();
+		//在cookie获取用户名写入页面
+		var $login = $('#head .user_menu li .yidenglu');
+		var $account = getCookie('account');
+		if($account){
+			$login.html($account)
+		};
+
 		var category = location.search.split('=')[1];
 		var $list = $('#main .list');
 	

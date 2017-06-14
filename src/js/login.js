@@ -40,7 +40,9 @@ require(['config'],function(){
 				}, 
 				success:function(data){
 					if(data==1){
-						$(location).attr('href', '../../index.html');
+						$(location).attr('href', '../../index.html?login='+$username);
+						//写入cookies
+						document.cookie = "account="+$username+";path=/"
 					}else if(data==0){
 						alert('账户或密码错误');
 					}

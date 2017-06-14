@@ -1,6 +1,6 @@
 //引入config
 require(['config','nav','menu'],function(){
-	require(['jquery','lazy'],function(){
+	require(['jquery','lazy','common'],function(){
 		var $ul = $('#main .carousel ul');
 		var index = 0;
 		setInterval(function(){
@@ -15,16 +15,11 @@ require(['config','nav','menu'],function(){
 		nav();
 		menu();
 
-		//显示导航栏
-		// var $nav = $('#head .nav');
-
-		// $(document).scroll(function(){
-		// 	if($(document).scrollTop()>0){
-		// 		$nav.show().animate({height:40},1000);
-		// 	}
-		// 	else if($(document).scrollTop()<=0){
-		// 		$nav.animate({height:0},1000).hide();
-		// 	}
-		// })
+		//在cookie获取用户名写入页面
+		var $login = $('#head .user_menu li .yidenglu');
+		var $account = getCookie('account');
+		if($account){
+			$login.html($account)
+		}
 	})	
 })

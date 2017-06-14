@@ -1,6 +1,13 @@
 body{
 	position: relative;
 }
+#loginbox{
+	top: 200px;
+	left: 400px;
+	width: 500px;
+	height: 250px;
+	/*display: none;*/
+}
 #head{
 	width: 1263px;
 	height: 120px;
@@ -80,6 +87,12 @@ body{
 	text-align: center;
 	border-right: 1px solid #d2d2d2;
 	border-bottom: 1px solid #d2d2d2;
+}
+.menu li:nth-child(3) input{
+	width: 50px;
+	text-align: center;
+	background-color: #e5e5e5;
+	border:none;
 }
 .menu li:nth-child(4) a{
 	background: url('../img/user_sprite.png')no-repeat 0px -166px;
@@ -214,100 +227,6 @@ body{
 	margin-top: 55px;
 }
 
-
-
-
-
-
-
-
-
-
-
-#main{
-	width: 1103px;
-	height: 6404px;
-	margin-left: 160px;
-	border-left: 1px solid #e4e4e4;
-}
-.carousel{
-	width: 377px;
-	height: 549px;
-	background-color: blue;
-	float: left;
-	overflow: hidden;
-	position: relative;
-}
-.carousel ul{
-	width: 1508px;
-	position: absolute;
-}
-.carousel ul li{
-	float: left;
-}
-.carouselSideimg td{
-	margin: 0;
-	padding: 0;
-}
-.carouselSideimg td img{
-	height: 100%;
-	width: 100%;
-}
-.bottom_img img{
-	width: 100%;
-}
-.styleC li{
-	float: left;
-}
-.new_h{
-	height: 125px;
-	width: 100%;
-	line-height: 125px;
-	text-align: center;
-	overflow: hidden;
-}
-.new_arri{
-	overflow: hidden;
-}
-.new_arri li{
-	float: left;
-	width: 275px;
-}
-.new_arri img{
-	margin-bottom: 10px;
-}
-.new_arri a{
-	height: 30px;
-	line-height: 30px;
-}
-.new_arri p{
-	margin-bottom: 10px;
-}
-.best_h{
-	width: 1050px;
-	height: 125px;
-	border-top:2px solid #e4e4e4;
-	line-height: 125px;
-	margin-left: 15px;
-	text-align: center;
-}
-.best_items{
-	overflow: hidden;
-}
-.best_items li{
-	float: left;
-	width: 275px;
-}
-.best_items img{
-	margin-bottom: 10px;
-}
-.best_items a{
-	height: 30px;
-	line-height: 30px;
-}
-.best_items p{
-	margin-bottom: 10px;
-}
 
 
 

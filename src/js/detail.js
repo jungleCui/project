@@ -1,6 +1,13 @@
 require(['config','index'],function(){
 		require(['jquery','gdszoom','common'],function(){
 			$('#loginbox').load('../html/login.html');
+			
+			//在cookie获取用户名写入页面
+			var $login = $('#head .user_menu li .yidenglu');
+			var $account = getCookie('account');
+			if($account){
+				$login.html($account)
+			}
 
 			var a = location.search.split('=')[1];
 			var $car = $('#main .car');
@@ -147,13 +154,11 @@ require(['config','index'],function(){
 				//ckookie保存
 				for(var i=0 ; i<carlist.length ; i++){
 					if(carlist[i].img==$img&&carlist[i].color==$color&&carlist[i].size==$size){
-						console.log($jianshu);
 						carlist[i].qty=carlist[i].qty+$jianshu;
 						break;
 					}
 				}
 				if(i==carlist.length){
-					console.log(0);
 					var buy = {
 						id:$img+$color+$size,
 						price:$everyprice,
