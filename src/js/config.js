@@ -8,8 +8,7 @@ require.config({
 		  "jquery": "../lib/jquery-3.2.1",
       "gdszoom":"../lib/jquery-gdszoom/jquery.gdszoom",
       "common":"../lib/common",
-      "lazy":"../lib/jquery.lazyload"
-		
+      "lazy":"../lib/jquery.lazyload"		
     },
 
     shim:{

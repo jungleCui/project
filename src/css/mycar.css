@@ -48,7 +48,7 @@
 	overflow: auto;
 	background-color: #fff;
 }
-#main .car_good .car_good_detail input{
+#main .car_good  .thischeck{
 	float: left;
 	margin-left: 20px;
 	margin-top: 63px;
@@ -125,7 +125,6 @@
 	width: 150px;
 	height: 25px;
 	margin-top: 50px;
-	text-align: center;
 }
 #main .car_good .car_good_qty p input{
 	display: inline-block;
@@ -136,6 +135,7 @@
 	border:1px solid black;
 }
 #main .car_good .car_good_qty p a{
+	text-align: center;
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
@@ -175,8 +175,13 @@
 	font-size: 36px;
 	font-weight: bold;
 }
+#main .jiezhang .shangpinjia,.youhui{
+	color: red;
+	font-size: 26px;
+	font-weight: bold;
+}
 #main .jiezhang p{
 	width: 1000px;
-	height: 30px;
+	height: 90px;
 	margin-left: 900px
 }
