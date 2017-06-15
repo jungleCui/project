@@ -1,38 +1,42 @@
-#box{
-	width: 600px;
-	height: 400px;
-	margin:50px auto;
+#box {
+  width: 600px;
+  height: 400px;
+  margin: 50px auto;
 }
-#top{
-	width: 600px;
-	height: 130px;
-	border-bottom:1px solid #e5e5e5;
+
+#top {
+  width: 600px;
+  height: 130px;
+  border-bottom: 1px solid #e5e5e5;
 }
-#leftpic{
-	width: 330px;
-	height: 180px;
-	float: left;
+
+#leftpic {
+  width: 330px;
+  height: 180px;
+  float: left;
+  .erweima {
+    width: 150px;
+    height: 150px;
+    margin-top: 30px;
+    margin-left: 35px;
+    p {
+      font-size: 14px;
+      color: red;
+      text-align: center;
+    }
+    img {
+      width: 100%;
+    }
+  }
 }
-#leftpic .erweima{
-	width: 150px;
-	height: 150px;
-	margin-top:30px;
-	margin-left: 35px;
+
+#zhuce {
+  float: left;
+  margin-top: 30px;
+  width: 270px;
+  height: 180px;
 }
-#leftpic .erweima p{
-	font-size: 14px;
-	color:red;
-	text-align: center;
-}
-#leftpic .erweima img{
-	width: 100%;
-}
-#zhuce{
-	float: left;
-	margin-top: 30px;
-	width: 270px;
-	height: 180px;
-}
-.zhucebtn{
-	margin-left: 100px;
+
+.zhucebtn {
+  margin-left: 100px;
 }

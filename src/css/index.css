@@ -36,15 +36,9 @@ body { position: relative; }
 
 .zone li a { display: block; height: 30px; }
 
-.zone li:nth-child(1) { background: url(../img/nav_sprite.png) no-repeat 0 0; }
+.zone li:nth-child(1), .zone li:nth-child(2), .zone li:nth-child(3) { background: url(../img/nav_sprite.png) no-repeat 0 0; }
 
-.zone li:nth-child(2) { background: url(../img/nav_sprite.png) no-repeat 0 0; }
-
-.zone li:nth-child(3) { background: url(../img/nav_sprite.png) no-repeat 0 0; }
-
-.user_menu { width: 335px; height: 73px; }
-
-.user_menu { float: right; margin-top: 40px; padding-left: 47px; background: url("../img/slogan.jpg") no-repeat -15px 50px; }
+.user_menu { width: 335px; height: 73px; float: right; margin-top: 40px; padding-left: 47px; background: url("../img/slogan.jpg") no-repeat -15px 50px; }
 
 .user_menu li { float: left; margin-left: 6px; margin-top: 30px; width: 90px; }
 
@@ -126,9 +120,7 @@ body { position: relative; }
 
 .tel_r { width: 200px; float: right; margin-right: 50px; background-color: #aaa; border-radius: 5px; position: relative; }
 
-.relex { margin-top: 15px; }
-
-.dress { margin-top: 15px; }
+.relex, .dress { margin-top: 15px; }
 
 .net { margin-top: 15px; margin-bottom: 10px; }
 
