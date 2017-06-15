@@ -126,10 +126,11 @@ require(['config','index','jiarugouwuche'],function(){
 			var $clearbtn = $('#main .jiezhang .clearbtn');
 			$clearbtn.on('click',function(){
 				var now = new Date();
-				now.setDate(now.getDate() + 7);
+				now.setDate(now.getDate() - 7);
 				setCookie('carlist',[],now,'/');
 				$all_car.html('');
 				$('#main .jiezhang .tal').html(0);
+				$shangpinjia.html(0);
 			})
 
 			//购物车加减
